@@ -3,15 +3,15 @@
 DL_NAME="jvp1-aw-dl"
 
 # If this is an EDL, use the load-balancer hostname instead of the service specific  hostname
-RANGER_HOST="jvp1-aw-dl-master0.jvp1-cdp.a465-9q4k.cloudera.site"
-HMS_HOST="jvp1-aw-dl-master0.jvp1-cdp.a465-9q4k.cloudera.site"
-KNOX_HOST="jvp1-aw-dl-master0.jvp1-cdp.a465-9q4k.cloudera.site"
-cdpadmin_user="jprosser"
-cdpadmin_group="sandbox-default-se-admin"
+RANGER_HOST="XXX.cloudera.site"
+HMS_HOST="XXX.cloudera.site"
+KNOX_HOST="XXX.cloudera.site"
+cdpadmin_user="ZZZ"
+cdpadmin_group="ZZZn"
 cdpadmin_passwd="XXXXXXXXXX"
-EMAIL_ID="jprosser@cloudera.com"
+EMAIL_ID="foo@bar.com"
 ROLE_OF_CLIENT_ID="IcebergAccessRole"
-DATABASE="REGENERON"
+DATABASE="TEST"
 ICEBERG_TABLE="EMPLOYEE"
 
 echo "Consider increasing this value to 100 from 10 for testing purposes."
