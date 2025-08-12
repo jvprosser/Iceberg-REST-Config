@@ -183,9 +183,12 @@ curl -k -u "${cdpadmin_user}:${cdpadmin_passwd}" -H "Accept: application/json" -
 
 set +o xtrace
 
-echo "display Database"
+echo "display Database, tables and table details"
 
 AT=$(curl -k -X POST -H  "Content-Type: application/x-www-form-urlencoded" -d "client_id=${CLIENT_ID}&client_secret=${SECRET}&grant_type=client_credentials" "https://${KNOX_HOST}/${DL_NAME}/cdp-share-access/hms-api/icecli/v1/oauth/tokens" | jq -r '.access_token')
 
 curl -ivk -X GET -H "Content-Type: application/x-www-form-urlencoded" -H "Authorization: Bearer ${AT}" https://${KNOX_HOST}/${DL_NAME}/cdp-share-access/hms-api/icecli/v1/namespaces
+
+curl -ivk -X GET -H "Content-Type: application/x-www-form-urlencoded" -H "Authorization: Bearer ${AT}" https://${KNOX_HOST}/${DL_NAME}/cdp-share-access/hms-api/icecli/v1/namespaces/${DATABASE}/tables
+curl -ivk -X GET -H "Content-Type: application/x-www-form-urlencoded" -H "Authorization: Bearer ${AT}" https://${KNOX_HOST}/${DL_NAME}/cdp-share-access/hms-api/icecli/v1/namespaces/${DATABASE}/tables/${ICEBERG_TABLE}
 echo "DONE"
